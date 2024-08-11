@@ -1,29 +1,29 @@
-import * as React from 'react';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import Link from '../src/Link';
-import ProTip from '../src/ProTip';
-import Copyright from '../src/Copyright';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import TabContext from '@mui/lab/TabContext';
-import TabPanel from '@mui/lab/TabPanel';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import { userContext, UserContextType } from './_app';
-import { useRouter } from 'next/navigation';
+import * as React from "react";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import Link from "../src/Link";
+import ProTip from "../src/ProTip";
+import Copyright from "../src/Copyright";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import TabContext from "@mui/lab/TabContext";
+import TabPanel from "@mui/lab/TabPanel";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import { userContext, UserContextType } from "./_app";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
-  const [loginTabValue, setloginTabValue] = React.useState('login');
+  const [loginTabValue, setloginTabValue] = React.useState("login");
 
   const onLoginTabChangeHandel = (event: React.SyntheticEvent, value: any) => {
     setloginTabValue(value);
   };
 
   const userContextData = React.useContext(userContext);
-  const [userNameState, setUserNameState] = React.useState('');
-  const [userPasswordState, setUserPasswordState] = React.useState('');
+  const [userNameState, setUserNameState] = React.useState("");
+  const [userPasswordState, setUserPasswordState] = React.useState("");
   const router = useRouter();
 
   const onLoginClickHandeler = () => {
@@ -33,13 +33,13 @@ export default function Home() {
       setInfo: () => {},
     };
     userContextData.setInfo(curentUserDta);
-    router.push('/about');
+    router.push("/about");
   };
 
   return (
     <Container maxWidth="lg">
       <Box
-        component={'div'}
+        component={"div"}
         display="flex"
         height="100vh"
         marginTop="auto"
@@ -54,7 +54,7 @@ export default function Home() {
           color="black"
           borderRadius="20px"
           padding="1.5rem"
-          sx={{ backgroundColor: 'lightblue' }}
+          sx={{ backgroundColor: "lightblue" }}
         >
           <TabContext value={loginTabValue}>
             <Tabs
